@@ -57,7 +57,16 @@ namespace AgendaPractise_
             }
 
             //marca en bold al atributo porque se esta usando. 
-        } 
+        }
+
+        public string Telefono
+        {
+            get
+            {
+                return _telefono;
+            }
+
+        }
 
         public string Apellido
         {
