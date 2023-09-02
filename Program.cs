@@ -14,12 +14,13 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Console.WriteLine("Welcome to agenda de contactos!");
 
 
-            Console.WriteLine("Seleccione que acción desea realizar: 1.Ver contactos 2.Agregar contactos 3.Eliminar contactor");
+            Console.WriteLine("Seleccione que acción desea realizar: 1.Ver contactos 2.Agregar contactos 3.Eliminar contactor 4.Salir");
             var seleccion= Console.ReadLine();
 
             if (seleccion == "1")
             {
                 Console.WriteLine("AGREGAR CONTACTOS");
+
             }
             else if (seleccion == "2")
             {
@@ -31,9 +32,13 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 Console.WriteLine("VER CONTACTOS");
 
             }
+            else if (seleccion == "4")
+            {
+                Environment.Exit(0);
+            }
             else
             {
-                Console.WriteLine(seleccion+" ES UNA SELECCIÓN INVÁLIDA.");
+                Console.WriteLine("Ud ingreso "+seleccion+", ES UNA SELECCIÓN INVÁLIDA.");
 
             }
 
