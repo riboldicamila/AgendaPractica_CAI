@@ -20,6 +20,16 @@ namespace MyApp // Note: actual namespace depends on the project name.
             if (seleccion == "1")
             {
                 Console.WriteLine("AGREGAR CONTACTOS");
+                Console.WriteLine("Escriba el nombre del contacto:");
+                var nombre= Console.ReadLine();
+                Console.WriteLine("Escriba el apellido del contacto:");
+                var apellido= Console.ReadLine();
+                Console.WriteLine("Escriba el telefono del contacto:");
+                var telefono= Console.ReadLine();
+
+                Contacto c5 = new Contacto(nombre, apellido, telefono);
+
+                Console.WriteLine("El contacto " + c5.Nombre + c5.Apellido + c5.Telefono+ " ha sido agregado.");
 
             }
             else if (seleccion == "2")

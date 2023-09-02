@@ -12,14 +12,14 @@ namespace AgendaPractise_
         //donde se crea la instancia 
         //inicializar la INSTANCIA, no la clase.
 
-        public Contacto(string nombre, string apellido, string dirreción)
+        public Contacto(string nombre, string apellido, string telefono)
         {
             //nace el OBJETO
             //llamadas, nace con cero. 
             _nombre = nombre;
             _apellido = apellido;
             _llamadas = 0;
-            _dirreción = dirreción;
+            _telefono = telefono;
    
 
         }
