@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,12 +72,30 @@ namespace AgendaPractise_
             else
             {
                 _contactos.Add(contacto);
-                Console.WriteLine("Contacto agregado.");
             }
         }
 
-        public void EliminarContacto() 
+        public void EliminarContacto(string contactName) 
         {
+            foreach (Contacto c in _contactos)
+            {
+                if (c.Nombre == contactName)
+                {
+                    Console.WriteLine("Eliminando "+ c.Nombre);
+                    _contactos.RemoveAll(c => c.Nombre == contactName);
+
+
+                    Console.WriteLine("Contactos en la agenda: ");
+
+                    foreach (Contacto j in _contactos)
+                    {
+                        Console.WriteLine(j.Nombre + " " + j.Apellido + " " + j.Telefono);
+                    }
+                    break;
+                }
+            }
+
+
         }
 
        // public Contacto TraerContacto()
