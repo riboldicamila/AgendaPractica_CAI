@@ -13,11 +13,13 @@ namespace MyApp // Note: actual namespace depends on the project name.
         {
             Console.WriteLine("Welcome to agenda de contactos!");
 
+            Agenda a1 = new Agenda("Agenda 2023.");
+            Console.WriteLine("Ud esta logeado en " + a1.Nombre);
 
             Console.WriteLine("Seleccione que acción desea realizar: 1.Ver contactos 2.Agregar contactos 3.Eliminar contactor 4.Salir");
             var seleccion= Console.ReadLine();
 
-            if (seleccion == "1")
+            if (seleccion == "2")
             {
                 Console.WriteLine("AGREGAR CONTACTOS");
                 Console.WriteLine("Escriba el nombre del contacto:");
@@ -29,7 +31,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
                 Contacto c5 = new Contacto(nombre, apellido, telefono);
 
-                Console.WriteLine("El contacto " + c5.Nombre + c5.Apellido + c5.Telefono+ " ha sido agregado.");
+                a1.AgregarContacto(c5);
+
+                Console.WriteLine("El contacto " + c5.Nombre + " "+ c5.Apellido + " "+ c5.Telefono+ " ha sido agregado.");
 
             }
             else if (seleccion == "2")
@@ -37,9 +41,14 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 Console.WriteLine("ELIMINAR CONTACTOS");
 
             }
-            else if(seleccion == "3")
+            else if(seleccion == "1")
             {
                 Console.WriteLine("VER CONTACTOS");
+                Console.WriteLine("Los contactos en " + a1.Nombre + " son: ");
+                foreach (Contacto c in a1.Contactos)
+                {
+                    Console.WriteLine(c.Nombre + " " + c.Apellido + " " + c.Telefono);
+                }
 
             }
             else if (seleccion == "4")
@@ -51,14 +60,6 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 Console.WriteLine("Ud ingreso "+seleccion+", ES UNA SELECCIÓN INVÁLIDA.");
 
             }
-
-
-            Contacto c1 = new Contacto("Pedrito", "f", "g");
-            Contacto c2 = new Contacto("Juan", "1kkkk", "f");
-            Contacto c3 = new Contacto("Camila", "f", "");
-
-            Console.WriteLine(c1.Nombre);
-            Console.WriteLine(c2.Apellido);
 
 
         }

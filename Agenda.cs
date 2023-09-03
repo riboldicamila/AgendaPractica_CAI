@@ -40,25 +40,39 @@ namespace AgendaPractise_
                
         }
 
+        public List<Contacto> Contactos
+        {
+            get
+            {
+                return _contactos;
+            }
+        }
+
 
         //metodos
 
         public void AgregarContacto(Contacto contacto)
         {
-            //por eso se inicializa antes
-            //se pueden agregar reglas de negocios
-            //contacto no este ya en la lista
+            bool contactExists = false;
 
             foreach (Contacto c in _contactos)
             {
-                if (c.Telefono == contacto.Telefono)
+                if (c.Nombre == contacto.Nombre)
                 {
-
+                    contactExists = true;
+                    break;
                 }
             }
 
-            _contactos.Add(contacto);
-
+            if (contactExists)
+            {
+                Console.WriteLine("El contacto ya esta en la agenda.");
+            }
+            else
+            {
+                _contactos.Add(contacto);
+                Console.WriteLine("Contacto agregado.");
+            }
         }
 
         public void EliminarContacto() 
